@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>foodpanda | Rider Calculator</title>
+    
+    <!-- Standard Meta Tags -->
+    <title>Panda Rider Remittance Calculator</title>
+    <meta name="description" content="Quickly calculate your Foodpanda remittance, net income, and wallet balance after tax.">
+    <meta name="author" content="Panda Rider Tools">
+
+    <!-- Social Media: Open Graph (Facebook, Messenger, WhatsApp, Viber) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-vercel-link.vercel.app/"> <!-- Replace with your actual link -->
+    <meta property="og:title" content="foodpanda | Rider Remittance Calculator">
+    <meta property="og:description" content="Calculate your exact cash turnover and net income after 2% tax. Built for Panda Riders.">
+    <meta property="og:image" content="https://your-vercel-link.vercel.app/og-image.png"> <!-- Use a link to a logo here -->
+
+    <!-- Social Media: Twitter (X) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Panda Rider Remittance Calculator">
+    <meta name="twitter:description" content="Calculate your remittance and net income instantly.">
+    <meta name="twitter:image" content="https://your-vercel-link.vercel.app/og-image.png">
+
+    <!-- Mobile App / PWA Meta Tags (Add to Home Screen) -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Panda Calc">
+    <meta name="theme-color" content="#D70F64"> <!-- Official Panda Pink -->
+
+    <!-- Favicon / Icon -->
+    <link rel="icon" type="image/png" href="https://www.foodpanda.ph/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.foodpanda.ph/favicon.ico">
+
+    <!-- Styles & Scripts -->
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Open Sans', sans-serif; background-color: #F7F7F7; }
         .bg-panda { background-color: #D70F64; }
@@ -18,12 +49,13 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Navbar -->
     <header class="bg-white shadow-sm py-4 px-6">
-        <div class="max-w-md mx-auto flex items-center">
-            <span class="text-[#D70F64] font-bold text-2xl tracking-tighter italic">foodpanda</span>
-            <span class="ml-2 text-gray-300 font-light">|</span>
-            <span class="ml-2 text-gray-600 font-semibold text-xs uppercase tracking-widest">Rider tools</span>
+        <div class="max-w-md mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <span class="text-[#D70F64] font-bold text-2xl tracking-tighter italic">foodpanda</span>
+                <span class="ml-2 text-gray-300 font-light">|</span>
+                <span class="ml-2 text-gray-600 font-semibold text-xs uppercase tracking-widest">Rider Tools</span>
+            </div>
         </div>
     </header>
 
@@ -33,9 +65,8 @@
             
             <div class="p-6">
                 <h2 class="text-xl font-bold text-gray-800 mb-1">Remittance Calc</h2>
-                <p class="text-sm text-gray-500 mb-6">Enter details to see what to pay.</p>
+                <p class="text-sm text-gray-500 mb-6">Real-time calculator for daily shift settlement.</p>
                 
-                <!-- HTMX FORM: Sends data to /api/calculate -->
                 <form hx-post="/api/calculate" 
                       hx-target="#result" 
                       hx-trigger="keyup delay:200ms, change" 
@@ -79,10 +110,9 @@
                     </div>
                 </form>
 
-                <!-- RESULT AREA -->
                 <div id="result">
                     <div class="mt-8 py-8 px-4 text-center bg-gray-50 rounded-xl border-2 border-dashed border-gray-200">
-                        <p class="text-gray-400 text-sm italic">Waiting for input...</p>
+                        <p class="text-gray-400 text-sm italic">Enter your shift totals above...</p>
                     </div>
                 </div>
 
@@ -92,7 +122,7 @@
 
     <footer class="text-center pb-8 text-gray-400 text-[10px] uppercase tracking-widest leading-loose">
         <p>2% Tax deducted from Fees & Quest</p>
-        <p>© Panda Rider Assistant</p>
+        <p>© 2024 Panda Rider Assistant</p>
     </footer>
 
 </body>
